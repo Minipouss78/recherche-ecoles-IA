@@ -1,0 +1,26 @@
+{
+  "INSA Toulouse": {
+    "portes_ouvertes": ["02/02/2027", "22/03/2027"],
+    "concours": ["Avril-Mai 2027"]
+  },
+  "INSA Lyon": {
+    "portes_ouvertes": ["15/03/2027"],
+    "concours": ["Avril-Mai 2027"]
+  },
+  "INSA Rennes": {
+    "portes_ouvertes": ["08/02/2027"],
+    "concours": ["Avril-Mai 2027"]
+  },
+  "Telecom Paris": {
+    "portes_ouvertes": ["15/03/2027"],
+    "concours": ["Mai 2027"]
+  },
+  "Telecom SudParis": {
+    "portes_ouvertes": ["22/02/2027"],
+    "concours": ["Avril 2027"]
+  },
+  "UTC Compiègne": {
+    "portes_ouvertes": ["01/03/2027"],
+    "concours": ["Avril-Mai 2027"]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "recherche-ecoles-ia",
+  "version": "1.0.0",
+  "description": "Agent IA pour suivre les portes ouvertes et concours des écoles d'ingénieurs IA",
+  "main": "scraper.js",
+  "scripts": {
+    "start": "node scraper.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.3.1"
+  }
+}

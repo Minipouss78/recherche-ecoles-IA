@@ -2,7 +2,7 @@ name: Scrape Schools Data
 
 on:
   schedule:
-    - cron: '0 9 * * *'  # Tourne tous les jours à 9h UTC
+    - cron: '0 8 * * *'  # Tourne tous les jours à 9h UTC
   workflow_dispatch:     # Permet de le lancer manuellement
 
 jobs:

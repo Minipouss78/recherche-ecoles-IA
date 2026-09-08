@@ -3,243 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recherche Écoles IA - Dashboard</title>
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <title>Recherche Écoles IA</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        .container { max-width: 1200px; margin: 0 auto; }
         .header {
             text-align: center;
             color: white;
             margin-bottom: 40px;
-            padding: 20px;
         }
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        .header p {
-            font-size: 1.1em;
-            opacity: 0.9;
-        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
         .schools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 20px;
-            margin-bottom: 40px;
         }
         .school-card {
             background: white;
             border-radius: 12px;
-            padding: 25px;
+            padding: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s;
         }
-        .school-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
+        .school-card:hover { transform: translateY(-5px); }
         .school-name {
-            font-size: 1.5em;
+            font-size: 1.3em;
             font-weight: bold;
             color: #667eea;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 10px;
-        }
-        .school-url {
-            color: #666;
-            margin-bottom: 15px;
-            font-size: 0.9em;
-        }
-        .school-url a {
-            color: #667eea;
-            text-decoration: none;
-            word-break: break-all;
-        }
-        .school-url a:hover {
-            text-decoration: underline;
-        }
-        .events-section {
-            margin-top: 15px;
-        }
-        .events-title {
-            font-weight: bold;
-            color: #333;
             margin-bottom: 10px;
-            font-size: 0.95em;
         }
-        .events-list {
-            background: #f5f5f5;
-            border-left: 4px solid #667eea;
-            padding: 12px;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-        .event-item {
-            color: #555;
-            padding: 5px 0;
-        }
-        .event-item:before {
-            content: "📅 ";
-            margin-right: 5px;
-        }
-        .status {
-            margin-top: 15px;
-            padding: 10px;
+        .school-url { color: #666; margin-bottom: 10px; }
+        .school-url a { color: #667eea; text-decoration: none; }
+        .school-url a:hover { text-decoration: underline; }
+        .school-type {
+            display: inline-block;
+            background: #f0f0f0;
+            color: #333;
+            padding: 5px 10px;
             border-radius: 4px;
             font-size: 0.85em;
-            font-weight: bold;
-        }
-        .status.success {
-            background: #d4edda;
-            color: #155724;
-        }
-        .status.error {
-            background: #f8d7da;
-            color: #721c24;
-        }
-        .last-updated {
-            text-align: center;
-            color: white;
-            margin-top: 30px;
-            opacity: 0.8;
-            font-size: 0.9em;
-        }
-        .loading {
-            text-align: center;
-            color: white;
-            font-size: 1.2em;
-        }
-        .error-message {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-    <div id="root"></div>
+    <div class="container">
+        <div class="header">
+            <h1>🎓 Recherche Écoles d'Ingénierie IA</h1>
+            <p>Suivi des écoles pour ton fils</p>
+        </div>
 
-    <script>
-        const { useState, useEffect } = React;
+        <div class="schools-grid">
+            <div class="school-card">
+                <div class="school-name">INSA Toulouse</div>
+                <div class="school-type">Prépa intégrée</div>
+                <div class="school-url">🔗 <a href="https://www.insa-toulouse.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
 
-        function Dashboard() {
-            const [schools, setSchools] = useState([]);
-            const [loading, setLoading] = useState(true);
-            const [error, setError] = useState(null);
-            const [lastUpdated, setLastUpdated] = useState(null);
+            <div class="school-card">
+                <div class="school-name">INSA Lyon</div>
+                <div class="school-type">Prépa intégrée</div>
+                <div class="school-url">🔗 <a href="https://www.insa-lyon.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
 
-            useEffect(() => {
-                fetchData();
-                // Actualise les données toutes les heures
-                const interval = setInterval(fetchData, 3600000);
-                return () => clearInterval(interval);
-            }, []);
+            <div class="school-card">
+                <div class="school-name">INSA Rennes</div>
+                <div class="school-type">Prépa intégrée</div>
+                <div class="school-url">🔗 <a href="https://www.insa-rennes.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
 
-            const fetchData = async () => {
-                try {
-                    setLoading(true);
-                    const response = await fetch(
-                        'https://raw.githubusercontent.com/Minipouss78/recherche-ecoles-IA/main/schools-data.json'
-                    );
-                    
-                    if (!response.ok) {
-                        throw new Error('Données non disponibles encore. Le scraper tourne actuellement!');
-                    }
-                    
-                    const data = await response.json();
-                    setSchools(data);
-                    setLastUpdated(new Date().toLocaleString('fr-FR'));
-                    setError(null);
-                } catch (err) {
-                    setError(err.message);
-                    console.error('Erreur:', err);
-                } finally {
-                    setLoading(false);
-                }
-            };
+            <div class="school-card">
+                <div class="school-name">INSA Strasbourg</div>
+                <div class="school-type">Prépa intégrée</div>
+                <div class="school-url">🔗 <a href="https://www.insa-strasbourg.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
 
-            if (loading) {
-                return (
-                    <div className="container">
-                        <div className="header">
-                            <h1>🎓 Recherche Écoles IA</h1>
-                        </div>
-                        <div className="loading">Chargement des données...</div>
-                    </div>
-                );
-            }
+            <div class="school-card">
+                <div class="school-name">Telecom Paris</div>
+                <div class="school-type">École spécialisée</div>
+                <div class="school-url">🔗 <a href="https://www.telecom-paris.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
 
-            return (
-                <div className="container">
-                    <div className="header">
-                        <h1>🎓 Recherche Écoles d'Ingénierie IA</h1>
-                        <p>Suivi en temps réel des portes ouvertes et concours</p>
-                    </div>
+            <div class="school-card">
+                <div class="school-name">Telecom SudParis</div>
+                <div class="school-type">École spécialisée</div>
+                <div class="school-url">🔗 <a href="https://www.telecom-sudparis.eu" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
 
-                    {error && (
-                        <div className="error-message">
-                            ⚠️ {error}
-                        </div>
-                    )}
+            <div class="school-card">
+                <div class="school-name">Grenoble INP - Ensimag</div>
+                <div class="school-type">Prépa intégrée</div>
+                <div class="school-url">🔗 <a href="https://ensimag.grenoble-inp.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
 
-                    <div className="schools-grid">
-                        {schools.map((school, idx) => (
-                            <div key={idx} className="school-card">
-                                <div className="school-name">{school.name}</div>
-                                <div className="school-url">
-                                    🔗 <a href={school.url} target="_blank" rel="noopener noreferrer">
-                                        Visiter le site
-                                    </a>
-                                </div>
-                                
-                                <div className="events-section">
-                                    <div className="events-title">Dates détectées:</div>
-                                    <div className="events-list">
-                                        {school.events && school.events.length > 0 ? (
-                                            school.events.map((event, i) => (
-                                                <div key={i} className="event-item">{event}</div>
-                                            ))
-                                        ) : (
-                                            <div className="event-item">Pas de dates trouvées</div>
-                                        )}
-                                    </div>
-                                </div>
+            <div class="school-card">
+                <div class="school-name">ENSEEIHT</div>
+                <div class="school-type">Prépa intégrée</div>
+                <div class="school-url">🔗 <a href="https://www.toulouse-inp.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
 
-                                <div className={`status ${school.status}`}>
-                                    {school.status === 'success' ? '✓ Données valides' : '✗ Erreur de scraping'}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+            <div class="school-card">
+                <div class="school-name">UTC Compiègne</div>
+                <div class="school-type">Prépa intégrée</div>
+                <div class="school-url">🔗 <a href="https://www.utc.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
 
-                    {lastUpdated && (
-                        <div className="last-updated">
-                            ⏰ Dernière actualisation: {lastUpdated}
-                        </div>
-                    )}
-                </div>
-            );
-        }
+            <div class="school-card">
+                <div class="school-name">ENSEA</div>
+                <div class="school-type">Prépa intégrée</div>
+                <div class="school-url">🔗 <a href="https://www.ensea.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
 
-        ReactDOM.render(<Dashboard />, document.getElementById('root'));
-    </script>
+            <div class="school-card">
+                <div class="school-name">IMT Atlantique</div>
+                <div class="school-type">Prépa intégrée</div>
+                <div class="school-url">🔗 <a href="https://www.imt-atlantique.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
+
+            <div class="school-card">
+                <div class="school-name">ICAM</div>
+                <div class="school-type">Prépa intégrée</div>
+                <div class="school-url">🔗 <a href="https://www.icam.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
+
+            <div class="school-card">
+                <div class="school-name">CPE Lyon</div>
+                <div class="school-type">Prépa intégrée</div>
+                <div class="school-url">🔗 <a href="https://www.cpe.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
+
+            <div class="school-card">
+                <div class="school-name">ESIEE Paris</div>
+                <div class="school-type">Prépa intégrée</div>
+                <div class="school-url">🔗 <a href="https://www.esiee.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
+
+            <div class="school-card">
+                <div class="school-name">Polytech Paris-Saclay</div>
+                <div class="school-type">Polytech</div>
+                <div class="school-url">🔗 <a href="https://www.polytech.universite-paris-saclay.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
+
+            <div class="school-card">
+                <div class="school-name">Sup Galilée</div>
+                <div class="school-type">Prépa intégrée</div>
+                <div class="school-url">🔗 <a href="https://galilee.univ-paris13.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
+
+            <div class="school-card">
+                <div class="school-name">CY Tech</div>
+                <div class="school-type">Prépa intégrée</div>
+                <div class="school-url">🔗 <a href="https://cytech.cyu.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
+
+            <div class="school-card">
+                <div class="school-name">Arts et Métiers</div>
+                <div class="school-type">Prépa intégrée</div>
+                <div class="school-url">🔗 <a href="https://www.artsetmetiers.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
+
+            <div class="school-card">
+                <div class="school-name">ECE Paris</div>
+                <div class="school-type">Prépa intégrée</div>
+                <div class="school-url">🔗 <a href="https://www.ece.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
+
+            <div class="school-card">
+                <div class="school-name">ISEP Paris</div>
+                <div class="school-type">Prépa intégrée</div>
+                <div class="school-url">🔗 <a href="https://www.isep.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
+
+            <div class="school-card">
+                <div class="school-name">ESILV</div>
+                <div class="school-type">Prépa intégrée</div>
+                <div class="school-url">🔗 <a href="https://www.esilv.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
+
+            <div class="school-card">
+                <div class="school-name">ESIGELEC</div>
+                <div class="school-type">Prépa intégrée</div>
+                <div class="school-url">🔗 <a href="https://www.esigelec.fr" target="_blank">Visiter</a></div>
+                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

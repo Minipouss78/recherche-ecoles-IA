@@ -21,7 +21,7 @@
         .header h1 { font-size: 2.5em; margin-bottom: 10px; }
         .schools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 20px;
         }
         .school-card {
@@ -38,8 +38,8 @@
             color: #667eea;
             margin-bottom: 10px;
         }
-        .school-url { color: #666; margin-bottom: 10px; }
-        .school-url a { color: #667eea; text-decoration: none; }
+        .school-url { color: #666; margin-bottom: 15px; }
+        .school-url a { color: #667eea; text-decoration: none; font-weight: bold; }
         .school-url a:hover { text-decoration: underline; }
         .school-type {
             display: inline-block;
@@ -48,7 +48,29 @@
             padding: 5px 10px;
             border-radius: 4px;
             font-size: 0.85em;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .dates-section {
+            background: #f9f9f9;
+            border-left: 4px solid #667eea;
+            padding: 12px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .dates-title {
+            font-weight: bold;
+            color: #333;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        .date-item {
+            color: #555;
+            padding: 5px 0;
+            font-size: 0.9em;
+        }
+        .date-item:before {
+            content: "📅 ";
+            margin-right: 5px;
         }
     </style>
 </head>
@@ -56,164 +78,101 @@
     <div class="container">
         <div class="header">
             <h1>🎓 Recherche Écoles d'Ingénierie IA</h1>
-            <p>Suivi des écoles pour ton fils</p>
+            <p>Suivi des écoles pour 2026/2027</p>
         </div>
 
-        <div class="schools-grid">
-            <div class="school-card">
-                <div class="school-name">INSA Toulouse</div>
-                <div class="school-type">Prépa intégrée</div>
-                <div class="school-url">🔗 <a href="https://www.insa-toulouse.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">INSA Lyon</div>
-                <div class="school-type">Prépa intégrée</div>
-                <div class="school-url">🔗 <a href="https://www.insa-lyon.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">INSA Rennes</div>
-                <div class="school-type">Prépa intégrée</div>
-                <div class="school-url">🔗 <a href="https://www.insa-rennes.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">INSA Strasbourg</div>
-                <div class="school-type">Prépa intégrée</div>
-                <div class="school-url">🔗 <a href="https://www.insa-strasbourg.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">Telecom Paris</div>
-                <div class="school-type">École spécialisée</div>
-                <div class="school-url">🔗 <a href="https://www.telecom-paris.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">Telecom SudParis</div>
-                <div class="school-type">École spécialisée</div>
-                <div class="school-url">🔗 <a href="https://www.telecom-sudparis.eu" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">Grenoble INP - Ensimag</div>
-                <div class="school-type">Prépa intégrée</div>
-                <div class="school-url">🔗 <a href="https://ensimag.grenoble-inp.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">ENSEEIHT</div>
-                <div class="school-type">Prépa intégrée</div>
-                <div class="school-url">🔗 <a href="https://www.toulouse-inp.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">UTC Compiègne</div>
-                <div class="school-type">Prépa intégrée</div>
-                <div class="school-url">🔗 <a href="https://www.utc.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">ENSEA</div>
-                <div class="school-type">Prépa intégrée</div>
-                <div class="school-url">🔗 <a href="https://www.ensea.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">IMT Atlantique</div>
-                <div class="school-type">Prépa intégrée</div>
-                <div class="school-url">🔗 <a href="https://www.imt-atlantique.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">ICAM</div>
-                <div class="school-type">Prépa intégrée</div>
-                <div class="school-url">🔗 <a href="https://www.icam.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">CPE Lyon</div>
-                <div class="school-type">Prépa intégrée</div>
-                <div class="school-url">🔗 <a href="https://www.cpe.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">ESIEE Paris</div>
-                <div class="school-type">Prépa intégrée</div>
-                <div class="school-url">🔗 <a href="https://www.esiee.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">Polytech Paris-Saclay</div>
-                <div class="school-type">Polytech</div>
-                <div class="school-url">🔗 <a href="https://www.polytech.universite-paris-saclay.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">Sup Galilée</div>
-                <div class="school-type">Prépa intégrée</div>
-                <div class="school-url">🔗 <a href="https://galilee.univ-paris13.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">CY Tech</div>
-                <div class="school-type">Prépa intégrée</div>
-                <div class="school-url">🔗 <a href="https://cytech.cyu.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">Arts et Métiers</div>
-                <div class="school-type">Prépa intégrée</div>
-                <div class="school-url">🔗 <a href="https://www.artsetmetiers.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">ECE Paris</div>
-                <div class="school-type">Prépa intégrée</div>
-                <div class="school-url">🔗 <a href="https://www.ece.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">ISEP Paris</div>
-                <div class="school-type">Prépa intégrée</div>
-                <div class="school-url">🔗 <a href="https://www.isep.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">ESILV</div>
-                <div class="school-type">Prépa intégrée</div>
-                <div class="school-url">🔗 <a href="https://www.esilv.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-name">ESIGELEC</div>
-                <div class="school-type">Prépa intégrée</div>
-                <div class="school-url">🔗 <a href="https://www.esigelec.fr" target="_blank">Visiter</a></div>
-                <p style="font-size: 0.9em; color: #666;">Pour les portes ouvertes et concours, consultez directement le site de l'école.</p>
-            </div>
-        </div>
+        <div class="schools-grid" id="schools-container"></div>
     </div>
+
+    <script>
+        const schoolsData = [
+            { name: 'INSA Toulouse', url: 'https://www.insa-toulouse.fr', type: 'Prépa intégrée' },
+            { name: 'INSA Lyon', url: 'https://www.insa-lyon.fr', type: 'Prépa intégrée' },
+            { name: 'INSA Rennes', url: 'https://www.insa-rennes.fr', type: 'Prépa intégrée' },
+            { name: 'INSA Strasbourg', url: 'https://www.insa-strasbourg.fr', type: 'Prépa intégrée' },
+            { name: 'INSA Rouen', url: 'https://www.insa-rouen.fr', type: 'Prépa intégrée' },
+            { name: 'INSA Hauts-de-France', url: 'https://www.insa-hauts-de-france.fr', type: 'Prépa intégrée' },
+            { name: 'INSA Centre Val de Loire', url: 'https://www.insa-cvl.fr', type: 'Prépa intégrée' },
+            { name: 'Polytech Paris-Saclay', url: 'https://www.polytech.universite-paris-saclay.fr', type: 'Polytech' },
+            { name: 'Polytech Montpellier', url: 'https://www.polytech.univ-montp2.fr', type: 'Polytech' },
+            { name: 'Polytech Toulouse', url: 'https://www.polytech-toulouse.fr', type: 'Polytech' },
+            { name: 'Polytech Nice Sophia', url: 'https://www.polytech.univ-cotedazur.fr', type: 'Polytech' },
+            { name: 'Polytech Lyon', url: 'https://www.polytech-lyon.fr', type: 'Polytech' },
+            { name: 'Telecom Paris (IP Paris)', url: 'https://www.telecom-paris.fr', type: 'École spécialisée' },
+            { name: 'Telecom SudParis', url: 'https://www.telecom-sudparis.eu', type: 'École spécialisée' },
+            { name: 'Grenoble INP - Ensimag', url: 'https://ensimag.grenoble-inp.fr', type: 'Prépa intégrée' },
+            { name: 'ENSEEIHT', url: 'https://www.toulouse-inp.fr', type: 'Prépa intégrée' },
+            { name: 'UTC Compiègne', url: 'https://www.utc.fr', type: 'Prépa intégrée' },
+            { name: 'ENSEA', url: 'https://www.ensea.fr', type: 'Prépa intégrée' },
+            { name: 'IMT Atlantique', url: 'https://www.imt-atlantique.fr', type: 'Prépa intégrée' },
+            { name: 'ICAM', url: 'https://www.icam.fr', type: 'Prépa intégrée' },
+            { name: 'CPE Lyon', url: 'https://www.cpe.fr', type: 'Prépa intégrée' },
+            { name: 'ESIEE Paris', url: 'https://www.esiee.fr', type: 'Prépa intégrée' },
+            { name: 'Sup Galilée', url: 'https://galilee.univ-paris13.fr', type: 'Prépa intégrée' },
+            { name: 'CY Tech', url: 'https://cytech.cyu.fr', type: 'Prépa intégrée' },
+            { name: 'Arts et Métiers', url: 'https://www.artsetmetiers.fr', type: 'Prépa intégrée' },
+            { name: 'ESTP Paris', url: 'https://www.estp.fr', type: 'École' },
+            { name: 'ECE Paris', url: 'https://www.ece.fr', type: 'Prépa intégrée' },
+            { name: 'ISEP Paris', url: 'https://www.isep.fr', type: 'Prépa intégrée' },
+            { name: 'ESILV', url: 'https://www.esilv.fr', type: 'Prépa intégrée' },
+            { name: 'ESIGELEC', url: 'https://www.esigelec.fr', type: 'Prépa intégrée' }
+        ];
+
+        let eventsData = {};
+
+        // Charger les données des événements
+        fetch('https://raw.githubusercontent.com/Minipouss78/recherche-ecoles-IA/main/events.json')
+            .then(response => response.json())
+            .then(data => {
+                eventsData = data;
+                renderSchools();
+            })
+            .catch(error => {
+                console.log('Fichier events.json non trouvé, affichage sans dates');
+                renderSchools();
+            });
+
+        function renderSchools() {
+            const container = document.getElementById('schools-container');
+            
+            schoolsData.forEach(school => {
+                const events = eventsData[school.name] || {};
+                const portes = events.portes_ouvertes || [];
+                const concours = events.concours || [];
+                
+                let datesHTML = '';
+                if (portes.length > 0 || concours.length > 0) {
+                    datesHTML = '<div class="dates-section">';
+                    
+                    if (portes.length > 0) {
+                        datesHTML += '<div class="dates-title">🚪 Portes ouvertes:</div>';
+                        portes.forEach(date => {
+                            datesHTML += `<div class="date-item">${date}</div>`;
+                        });
+                    }
+                    
+                    if (concours.length > 0) {
+                        datesHTML += '<div class="dates-title" style="margin-top: 10px;">🏆 Concours:</div>';
+                        concours.forEach(date => {
+                            datesHTML += `<div class="date-item">${date}</div>`;
+                        });
+                    }
+                    
+                    datesHTML += '</div>';
+                }
+                
+                const card = `
+                    <div class="school-card">
+                        <div class="school-name">${school.name}</div>
+                        <div class="school-type">${school.type}</div>
+                        <div class="school-url">🔗 <a href="${school.url}" target="_blank">Visiter le site</a></div>
+                        ${datesHTML}
+                    </div>
+                `;
+                
+                container.innerHTML += card;
+            });
+        }
+    </script>
 </body>
 </html>

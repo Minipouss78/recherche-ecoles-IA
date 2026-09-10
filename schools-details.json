@@ -1,0 +1,90 @@
+{
+  "INSA Toulouse": {
+    "prix": "Gratuit (public)",
+    "avis": 4.5,
+    "nombre_avis": 342,
+    "description": "Excellente école avec fort accent sur IA et ingénierie logicielle",
+    "portes_ouvertes": ["02/02/2027", "22/03/2027"],
+    "concours": ["Avril-Mai 2027"]
+  },
+  "INSA Lyon": {
+    "prix": "Gratuit (public)",
+    "avis": 4.6,
+    "nombre_avis": 298,
+    "description": "Très bonne réputationInternationale, spécialité IA/Data Science",
+    "portes_ouvertes": ["15/03/2027"],
+    "concours": ["Avril-Mai 2027"]
+  },
+  "INSA Rennes": {
+    "prix": "Gratuit (public)",
+    "avis": 4.3,
+    "nombre_avis": 215,
+    "description": "Bonne école, moins connue que Toulouse/Lyon",
+    "portes_ouvertes": ["08/02/2027"],
+    "concours": ["Avril-Mai 2027"]
+  },
+  "Telecom Paris": {
+    "prix": "Gratuit (public)",
+    "avis": 4.7,
+    "nombre_avis": 412,
+    "description": "Top école pour IA et télécommunications, très sélective",
+    "portes_ouvertes": ["15/03/2027"],
+    "concours": ["Mai 2027"]
+  },
+  "Telecom SudParis": {
+    "prix": "Gratuit (public)",
+    "avis": 4.4,
+    "nombre_avis": 187,
+    "description": "Bonne école spécialisée en informatique et réseaux",
+    "portes_ouvertes": ["22/02/2027"],
+    "concours": ["Avril 2027"]
+  },
+  "UTC Compiègne": {
+    "prix": "Gratuit (public)",
+    "avis": 4.2,
+    "nombre_avis": 256,
+    "description": "Université technologique avec bonne réputation",
+    "portes_ouvertes": ["01/03/2027"],
+    "concours": ["Avril-Mai 2027"]
+  },
+  "Grenoble INP - Ensimag": {
+    "prix": "Gratuit (public)",
+    "avis": 4.8,
+    "nombre_avis": 389,
+    "description": "Excellente pour IA/Informatique, très selectif",
+    "portes_ouvertes": ["10/02/2027"],
+    "concours": ["Avril 2027"]
+  },
+  "ENSEEIHT": {
+    "prix": "Gratuit (public)",
+    "avis": 4.5,
+    "nombre_avis": 234,
+    "description": "École d'ingénierie généraliste forte en IA",
+    "portes_ouvertes": ["12/03/2027"],
+    "concours": ["Mai 2027"]
+  },
+  "ENSEA": {
+    "prix": "Gratuit (public)",
+    "avis": 4.3,
+    "nombre_avis": 156,
+    "description": "Petite école spécialisée, très bonne en électronique/IA",
+    "portes_ouvertes": ["20/02/2027"],
+    "concours": ["Avril 2027"]
+  },
+  "IMT Atlantique": {
+    "prix": "Gratuit (public)",
+    "avis": 4.4,
+    "nombre_avis": 289,
+    "description": "École généraliste avec spécialité en numérique",
+    "portes_ouvertes": ["08/03/2027"],
+    "concours": ["Avril-Mai 2027"]
+  },
+  "ICAM": {
+    "prix": "Gratuit (public)",
+    "avis": 4.1,
+    "nombre_avis": 178,
+    "description": "École généraliste, cursus avec apprentissage possible",
+    "portes_ouvertes": ["15/02/2027"],
+    "concours": ["Mars-Avril 2027"]
+  }
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recherche Écoles IA</title>
+    <title>Recherche Écoles IA 2026/2027</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -21,7 +21,7 @@
         .header h1 { font-size: 2.5em; margin-bottom: 10px; }
         .schools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
             gap: 20px;
         }
         .school-card {
@@ -32,30 +32,65 @@
             transition: transform 0.3s;
         }
         .school-card:hover { transform: translateY(-5px); }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+        }
         .school-name {
             font-size: 1.3em;
             font-weight: bold;
             color: #667eea;
-            margin-bottom: 10px;
+            flex: 1;
         }
-        .school-url { color: #666; margin-bottom: 15px; }
-        .school-url a { color: #667eea; text-decoration: none; font-weight: bold; }
-        .school-url a:hover { text-decoration: underline; }
         .school-type {
             display: inline-block;
-            background: #f0f0f0;
-            color: #333;
-            padding: 5px 10px;
-            border-radius: 4px;
+            background: #667eea;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: bold;
+            margin-left: 10px;
+            white-space: nowrap;
+        }
+        .price {
+            font-size: 1em;
+            font-weight: bold;
+            color: #27ae60;
+            margin-bottom: 10px;
+        }
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            font-size: 0.9em;
+        }
+        .stars {
+            color: #f39c12;
+            letter-spacing: 2px;
+        }
+        .avis-count {
+            color: #666;
             font-size: 0.85em;
+        }
+        .description {
+            color: #555;
+            font-size: 0.9em;
             margin-bottom: 15px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-left: 3px solid #667eea;
+            border-radius: 4px;
         }
         .dates-section {
-            background: #f9f9f9;
+            background: #f0f7ff;
             border-left: 4px solid #667eea;
             padding: 12px;
             border-radius: 4px;
-            margin-top: 10px;
+            margin-bottom: 15px;
         }
         .dates-title {
             font-weight: bold;
@@ -65,12 +100,28 @@
         }
         .date-item {
             color: #555;
-            padding: 5px 0;
+            padding: 4px 0;
             font-size: 0.9em;
         }
         .date-item:before {
             content: "📅 ";
             margin-right: 5px;
+        }
+        .school-url {
+            text-align: center;
+        }
+        .school-url a {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .school-url a:hover {
+            background: #764ba2;
         }
     </style>
 </head>
@@ -78,7 +129,7 @@
     <div class="container">
         <div class="header">
             <h1>🎓 Recherche Écoles d'Ingénierie IA</h1>
-            <p>Suivi des écoles pour 2026/2027</p>
+            <p>Suivi complet des écoles 2026/2027</p>
         </div>
 
         <div class="schools-grid" id="schools-container"></div>
@@ -118,17 +169,25 @@
             { name: 'ESIGELEC', url: 'https://www.esigelec.fr', type: 'Prépa intégrée' }
         ];
 
-        let eventsData = {};
+        let detailsData = {};
 
-        // Charger les données des événements
-        fetch('https://raw.githubusercontent.com/Minipouss78/recherche-ecoles-IA/main/events.json')
+        function generateStars(rating) {
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 >= 0.5;
+            let stars = '★'.repeat(fullStars);
+            if (hasHalfStar) stars += '½';
+            return stars;
+        }
+
+        // Charger les données détaillées
+        fetch('https://raw.githubusercontent.com/Minipouss78/recherche-ecoles-IA/main/schools-details.json')
             .then(response => response.json())
             .then(data => {
-                eventsData = data;
+                detailsData = data;
                 renderSchools();
             })
             .catch(error => {
-                console.log('Fichier events.json non trouvé, affichage sans dates');
+                console.log('Fichier schools-details.json non trouvé');
                 renderSchools();
             });
 
@@ -136,9 +195,24 @@
             const container = document.getElementById('schools-container');
             
             schoolsData.forEach(school => {
-                const events = eventsData[school.name] || {};
-                const portes = events.portes_ouvertes || [];
-                const concours = events.concours || [];
+                const details = detailsData[school.name] || {};
+                const avis = details.avis || 0;
+                const nombreAvis = details.nombre_avis || 0;
+                const prix = details.prix || 'À vérifier';
+                const description = details.description || 'Consultez le site pour plus d\'informations';
+                const portes = details.portes_ouvertes || [];
+                const concours = details.concours || [];
+                
+                let ratingHTML = '';
+                if (avis > 0) {
+                    const stars = generateStars(avis);
+                    ratingHTML = `
+                        <div class="rating">
+                            <div class="stars">${stars}</div>
+                            <div class="avis-count">${avis}/5 (${nombreAvis} avis)</div>
+                        </div>
+                    `;
+                }
                 
                 let datesHTML = '';
                 if (portes.length > 0 || concours.length > 0) {
@@ -163,10 +237,17 @@
                 
                 const card = `
                     <div class="school-card">
-                        <div class="school-name">${school.name}</div>
-                        <div class="school-type">${school.type}</div>
-                        <div class="school-url">🔗 <a href="${school.url}" target="_blank">Visiter le site</a></div>
+                        <div class="card-header">
+                            <div class="school-name">${school.name}</div>
+                            <div class="school-type">${school.type}</div>
+                        </div>
+                        <div class="price">💰 ${prix}</div>
+                        ${ratingHTML}
+                        <div class="description">${description}</div>
                         ${datesHTML}
+                        <div class="school-url">
+                            <a href="${school.url}" target="_blank">Visiter le site →</a>
+                        </div>
                     </div>
                 `;
                 
